@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mfcUI", "mfcUI", "{D3559288
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "winform", "winform", "{30B9FD97-75D2-4202-9EFD-71C0E3FC73D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{46AD8803-6DB4-4F32-B613-AC8A90182CAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
