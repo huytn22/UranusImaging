@@ -26,4 +26,6 @@ bool Read_UraI_ini()
     _TCHAR szFileName[MAX_PATH];
     
     GetModuleFileName(NULL, szFileName, sizeof(_TCHAR)*MAX_PATH);
+
+	return true;
 }
