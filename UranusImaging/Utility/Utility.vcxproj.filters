@@ -18,5 +18,8 @@
     <ClInclude Include="ErrorDef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DllDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "Utility\Utility.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ErrorMan", "ErrorMan\ErrorMan.vcxproj", "{BE63A06C-B552-4B5D-B83D-3A1ABA801662}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InitAppDlg", "InitAppDlg\InitAppDlg.vcxproj", "{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -125,6 +127,18 @@ Global
 		{BE63A06C-B552-4B5D-B83D-3A1ABA801662}.Release|Win32.Build.0 = Release|Win32
 		{BE63A06C-B552-4B5D-B83D-3A1ABA801662}.Release|x64.ActiveCfg = Release|x64
 		{BE63A06C-B552-4B5D-B83D-3A1ABA801662}.Release|x64.Build.0 = Release|x64
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Debug|Win32.Build.0 = Debug|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Debug|x64.ActiveCfg = Debug|x64
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Debug|x64.Build.0 = Debug|x64
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Release|Win32.ActiveCfg = Release|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Release|Win32.Build.0 = Release|Win32
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Release|x64.ActiveCfg = Release|x64
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,5 +152,6 @@ Global
 		{30B9FD97-75D2-4202-9EFD-71C0E3FC73D7} = {BF9B682C-FDD9-4F00-821F-C34F05476FDA}
 		{FDE00269-D9A4-4D90-9BCA-EA7341E86FB5} = {46AD8803-6DB4-4F32-B613-AC8A90182CAE}
 		{BE63A06C-B552-4B5D-B83D-3A1ABA801662} = {46AD8803-6DB4-4F32-B613-AC8A90182CAE}
+		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73} = {D3559288-6FA0-470F-9685-C77C161C1BB9}
 	EndGlobalSection
 EndGlobal
