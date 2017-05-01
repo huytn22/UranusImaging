@@ -142,10 +142,20 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChainMan.h" />
+    <ClInclude Include="ChainProc.h" />
+    <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="PluginMan.h" />
+    <ClInclude Include="Processor.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ChainMan.cpp" />
+    <ClCompile Include="ChainProc.cpp" />
+    <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="PluginMan.cpp" />
+    <ClCompile Include="Processor.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
