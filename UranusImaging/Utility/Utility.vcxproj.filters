@@ -21,5 +21,16 @@
     <ClInclude Include="DllDef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FindFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FindFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

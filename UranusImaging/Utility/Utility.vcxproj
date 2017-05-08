@@ -146,8 +146,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ConstDef.h" />
     <ClInclude Include="DllDef.h" />
     <ClInclude Include="ErrorDef.h" />
+    <ClInclude Include="FindFile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FindFile.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

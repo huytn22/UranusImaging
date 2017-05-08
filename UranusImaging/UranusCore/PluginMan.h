@@ -4,5 +4,8 @@ class CPluginMan
 public:
 	CPluginMan();
 	~CPluginMan();
+
+public:
+	int InitPlugin();
 };
 
