@@ -1,6 +1,11 @@
 #pragma once
 #include "ConstDef.h"
-#include <string>
+//#include <string>
+#include "ComTypeDef.h"
+
+#ifdef _WINDOWS
+#include <Windows.h>
+#endif // _WINDOWS
 
 using namespace std;
 
@@ -11,16 +16,19 @@ public:
 	~CFindFile();
 
 private:
-	TCHAR m_szDir[_MAX_PATH];
-	TCHAR m_tcFileExt[FILE_EXT_NUM];
+	tstring m_szDir;
+	tstring m_tcFileExt;
 	HANDLE m_hFind;
 
 public:
 	//Open directory
-	bool OpenDir(TCHAR* szDir, TCHAR* tcFileExt);
+	bool OpenDir(tstring szDir, tstring tcFileExt);
 	
 	//get first file
-	bool GetFirstFile(TCHAR* pFileName);
+	bool GetFirstFile(tstring &FileName);
+
+	//get next file
+	bool GetNextFile(tstring &FileName);
 
 };
 

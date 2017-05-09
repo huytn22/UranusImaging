@@ -12,6 +12,7 @@
 
 #include "stdafx.h"
 #include "PluginMan.h"
+#include "..\Utility\FindFile.h"
 
 
 //==================================================================================
@@ -62,5 +63,11 @@ CPluginMan::~CPluginMan()
 //==================================================================================
 int CPluginMan::InitPlugin()
 {
+	CFindFile findPlgin;
 
+	findPlgin.OpenDir()
+
+
+
+	return 0;
 }

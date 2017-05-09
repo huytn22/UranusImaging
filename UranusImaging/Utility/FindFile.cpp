@@ -5,16 +5,12 @@
 //
 // Note:
 //
-//
-// History:
-// 08/05/2017	Huy		Original created.
 //==================================================================================
 #include "FindFile.h"
 
 #ifdef _WINDOWS
 //#include <Windows.h>
 #include "Shlwapi.h"
-#include "TCHAR.H"
 #endif // _WINDOWS
 
 
@@ -40,21 +36,21 @@ CFindFile::~CFindFile()
 //		false	: Failed.
 // Note:
 //
-// History:
-// 08/05/2017	Huy		Original created.
 //==================================================================================
-bool CFindFile::OpenDir(TCHAR* szDir, TCHAR* tcFileExt)
+bool CFindFile::OpenDir(tstring szDir, tstring tcFileExt)
 {
 	bool bRet = true;
 
 	//save dir
-	_tcscpy(m_szDir, szDir);
+	m_szDir = szDir;
+	//_tcscpy(m_szDir, szDir);
 
 	//save extension
-	_tcscpy(m_tcFileExt, tcFileExt);
+	m_tcFileExt = tcFileExt;
+	//_tcscpy(m_tcFileExt, tcFileExt);
 
 	//check if dir is exist or not
-	if (!PathFileExists(szDir))
+	if (!PathFileExists(szDir.c_str()))
 		bRet = false;
 
 	return bRet;
@@ -70,18 +66,48 @@ bool CFindFile::OpenDir(TCHAR* szDir, TCHAR* tcFileExt)
 // Return:
 //		true	: Success.
 //		false	: Failed.
-// Note:
 //
-// History:
-// 08/05/2017	Huy		Original created.
+// Note:
+//		None.
 //==================================================================================
-bool CFindFile::GetFirstFile(TCHAR* pFileName)
+bool CFindFile::GetFirstFile(tstring &FileName)
 {
 	bool bRet = true;
 	WIN32_FIND_DATA ffd;
 
-	m_hFind = FindFirstFile(m_szDir, &ffd);
+	tstring filter = m_szDir.c_str();
+	filter.append(_T("\\*."));
+	filter += m_tcFileExt;
+
+	//clear before finding
+	FileName.clear();
+
+	m_hFind = FindFirstFile(filter.c_str(), &ffd);
 	if (m_hFind == INVALID_HANDLE_VALUE)
+	{
+		bRet = false;
+	}
+	else
+	{
+		FileName = ffd.cFileName;
+	}
+
+	return bRet;
+}
+
+bool CFindFile::GetNextFile(tstring &FileName)
+{
+	bool bRet = true;
+	WIN32_FIND_DATA ffd;
+
+	//clear before finding
+	FileName.clear();
+
+	if (FindNextFile(m_hFind, &ffd) != 0)
+	{
+		FileName = ffd.cFileName;
+	}
+	else
 	{
 		bRet = false;
 	}
