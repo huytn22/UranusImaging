@@ -109,6 +109,9 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>Shlwapi.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -152,6 +155,8 @@
     <ClInclude Include="DllDef.h" />
     <ClInclude Include="ErrorDef.h" />
     <ClInclude Include="FindFile.h" />
+    <ClInclude Include="PluginDef.h" />
+    <ClInclude Include="StringDef.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FindFile.cpp" />

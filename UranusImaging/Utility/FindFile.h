@@ -3,7 +3,7 @@
 //#include <string>
 #include "ComTypeDef.h"
 
-#ifdef _WINDOWS
+#if defined(_WINDOWS) || defined(WIN32)
 #include <Windows.h>
 #endif // _WINDOWS
 

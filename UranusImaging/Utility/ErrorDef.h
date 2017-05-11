@@ -1,10 +1,17 @@
 #pragma once
 
 enum {
-	ERR_SUCCESS = 0,
+	//error: 0
+	//No error.
+	uraERR_SUCCESS = 0,
+
+	//error: 1
+	//Directory does not exist.
+	uraERR_DIR_NOT_EXIST,
+
+	//error: 2
+	//File was not found.
+	uraERR_FILE_NOT_FOUND,
 	
-	
-	
-	
-	ERR_MAX
+	uraERR_MAX
 };

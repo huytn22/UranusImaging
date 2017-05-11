@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#ifdef _WINDOWS
+#if defined(_WINDOWS) || defined(WIN32)
 #include "TCHAR.H"
 #endif // _WINDOWS
 

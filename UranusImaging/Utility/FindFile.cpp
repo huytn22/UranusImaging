@@ -8,7 +8,7 @@
 //==================================================================================
 #include "FindFile.h"
 
-#ifdef _WINDOWS
+#if defined(_WINDOWS) || defined(WIN32)
 //#include <Windows.h>
 #include "Shlwapi.h"
 #endif // _WINDOWS
