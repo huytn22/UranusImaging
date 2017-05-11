@@ -31,8 +31,6 @@
 //
 // Note:
 //
-// History:
-// 08/05/2017	Huy		Original created.
 //==================================================================================
 CPluginMan::CPluginMan()
 {
@@ -48,8 +46,6 @@ CPluginMan::CPluginMan()
 //
 // Note:
 //
-// History:
-// 08/05/2017	Huy		Original created.
 //==================================================================================
 CPluginMan::~CPluginMan()
 {
@@ -65,8 +61,6 @@ CPluginMan::~CPluginMan()
 //	
 // Note:
 //	
-// History:
-//	08/05/2017	Huy		Original created.
 //==================================================================================
 int CPluginMan::LoadPlugin(tstring szPluginDir)
 {
@@ -81,9 +75,7 @@ int CPluginMan::LoadPlugin(tstring szPluginDir)
 // Return:
 //	
 // Note:
-//	
-// History:
-//	08/05/2017	Huy		Original created.
+//
 //==================================================================================
 int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 {
@@ -112,8 +104,8 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 			continue;
 
 		//check compatible plugin
-
 		
+
 
 
 	} while (!findPlgin.GetNextFile(tFileName));
@@ -130,8 +122,6 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 //	
 // Note:
 //	
-// History:
-//	10/05/2017	Huy		Original created.
 //==================================================================================
 int CPluginMan::SetOption(PluginOpt PlgOpt)
 {
@@ -150,8 +140,6 @@ int CPluginMan::SetOption(PluginOpt PlgOpt)
 //	false	: not compatible.
 // Note:
 //	
-// History:
-//	10/05/2017	Huy		Original created.
 //==================================================================================
 bool CPluginMan::CheckCompatible(HINSTANCE hPlgInst)
 {
