@@ -123,7 +123,11 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 
 		//check compatible plugin
 		if (!VerifyPlugin(hPlgInst))
+		{
+			FreeLibrary(hPlgInst);
 			continue;
+		}
+			
 
 
 
