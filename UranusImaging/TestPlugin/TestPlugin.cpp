@@ -13,10 +13,13 @@
 //==================================================================================
 // Description:
 //	Get version of plugin dll.
+//
 // Parameters:
 //	None
+//
 // Return:
 //	Version of plugin dll.
+//
 // Note:
 //	
 //==================================================================================
@@ -30,10 +33,13 @@ tstring URA_GET_VERSION()
 //==================================================================================
 // Description:
 //	Get validation code of plugin dll.
+//
 // Parameters:
 //	None.
+//
 // Return:
 //	Validation code.
+//
 // Note:
 //	
 //==================================================================================
@@ -41,4 +47,23 @@ PLUGIN_API
 tstring URA_GET_VALID_CODE()
 {
 	return VALIDATE_CODE;
+}
+
+//==================================================================================
+// Description:
+//	Get objects instance.
+//
+// Parameters:
+//	None.
+//
+// Return:
+//	validation code.
+//
+// Note:
+//	
+//==================================================================================
+PLUGIN_API
+void* URA_GET_OBJ_INST()
+{
+	return NULL;
 }

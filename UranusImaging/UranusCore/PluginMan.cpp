@@ -127,11 +127,9 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 			FreeLibrary(hPlgInst);
 			continue;
 		}
-			
 
 
-
-	} while (!findPlgin.GetNextFile(tFileName));
+	} while (findPlgin.GetNextFile(tFileName));
 	
 	return uraERR_SUCCESS;
 }
