@@ -21,16 +21,21 @@
 #include "..\Utility\ErrorDef.h"
 #include "..\Utility\StringDef.h"
 #include "..\PluginUtil\PluginBase.h"
+#include "..\PluginUtil\PluginItf.h"
 
 
 //==================================================================================
 // Description:
+//	Constructor.
 //
 // Parameters:
+//	None.
 //
 // Return:
+//	None.
 //
 // Note:
+//	None.
 //
 //==================================================================================
 CPluginMan::CPluginMan()
@@ -40,12 +45,16 @@ CPluginMan::CPluginMan()
 
 //==================================================================================
 // Description:
+//	Destructor.
 //
 // Parameters:
+//	None.
 //
 // Return:
+//	None.
 //
 // Note:
+//	None.
 //
 //==================================================================================
 CPluginMan::~CPluginMan()
@@ -56,11 +65,15 @@ CPluginMan::~CPluginMan()
 //==================================================================================
 // Description:
 //	Load all plugin.
+//
 // Parameters:
-//	None.
+//	[IN] tstring szPluginDir	: Plugin folder.
+//
 // Return:
-//	
+//	Error code.
+//
 // Note:
+//	None.
 //	
 //==================================================================================
 int CPluginMan::LoadPlugin(tstring szPluginDir)
@@ -71,10 +84,14 @@ int CPluginMan::LoadPlugin(tstring szPluginDir)
 //==================================================================================
 // Description:
 //	Load all plugin.
+//
 // Parameters:
-//	None.
+//	[IN] tstring szPluginDir	: Plugin folder.
+//	[IN] PluginOpt PlgOpt		: Plugin option.
+//
 // Return:
-//	
+//	Error code.
+//
 // Note:
 //
 //==================================================================================
@@ -105,7 +122,8 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 			continue;
 
 		//check compatible plugin
-		
+		if (!VerifyPlugin(hPlgInst))
+			continue;
 
 
 
@@ -117,9 +135,12 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 //==================================================================================
 // Description:
 //	Set plugtion option
+//
 // Parameters:
-//	[IN] PluginOpt PlgOpt	: Plugin option
+//	[IN] PluginOpt PlgOpt	: Plugin option.
+//
 // Return:
+//	Error code.
 //	
 // Note:
 //	
@@ -134,21 +155,55 @@ int CPluginMan::SetOption(PluginOpt PlgOpt)
 //==================================================================================
 // Description:
 //	Check this plugin is compatible or not.
+//
 // Parameters:
 //	[IN] HINSTANCE hPlgInst	: Instance of plugin.
+//
 // Return:
 //	true	: compatible.
 //	false	: not compatible.
+//
 // Note:
 //	
 //==================================================================================
-bool CPluginMan::CheckCompatible(HINSTANCE hPlgInst)
+bool CPluginMan::VerifyPlugin(HINSTANCE hPlgInst)
 {
-	bool bResult = false;
-		
-	//ObjProc objFunc = (ObjProc)GetProcAddress(mod, "_Z6getObjv");
-	//NameProc nameFunc = (NameProc)GetProcAddress(mod, "_Z7getNamev");
-	//if (!objFunc || !nameFunc)
+	// get GetValidateCode
+	GetValidateCodePtr GetValidateCodeFC = (GetValidateCodePtr)GetProcAddress(hPlgInst, URA_FC_VALIDCODE_NAME);
+	if (!GetValidateCodeFC)
+		return false;
 
-	return bResult;
+	// verify if this dll is not a plugin of this software
+	if (GetValidateCodeFC() != VALIDATE_CODE)
+		return false;
+
+	//get GetVersions function
+	GetVersionsPtr GetVersionFC = (GetVersionsPtr)GetProcAddress(hPlgInst, URA_FC_VERSION_NAME);
+	if (!GetVersionFC)
+		return false;
+
+	//verify if version is not compatible
+	if (!VerifyVersion(GetVersionFC()))
+		return false;
+
+	return true;
+}
+
+//==================================================================================
+// Description:
+//	Check this plugin is compatible or not.
+//
+// Parameters:
+//	[IN] HINSTANCE hPlgInst	: Instance of plugin.
+//
+// Return:
+//	true	: compatible.
+//	false	: not compatible.
+//
+// Note:
+//	
+//==================================================================================
+bool CPluginMan::VerifyVersion(tstring tVersion)
+{
+	return true;
 }

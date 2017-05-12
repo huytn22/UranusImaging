@@ -8,8 +8,6 @@
 
 #define VERSION _T("0.1.0.0")
 
-//#define COMPATIBLE_CODE _T("0.1.0.0")
-
 //==================================================================================
 // Description:
 //	Get version of plugin dll.
@@ -33,7 +31,7 @@ tstring URA_GET_VERSION()
 // Parameters:
 //	None.
 // Return:
-//	Validation code.
+//	validation code.
 // Note:
 //	
 //==================================================================================

@@ -16,7 +16,8 @@ private:
 
 //private method
 private:
-	bool CheckCompatible(HINSTANCE hPlgInst);
+	bool VerifyPlugin(HINSTANCE hPlgInst);
+	bool VerifyVersion(tstring tVersion);
 
 //public method
 public:
