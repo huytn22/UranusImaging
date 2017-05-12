@@ -55,6 +55,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{207AA3
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PluginUtil", "PluginUtil\PluginUtil.vcxproj", "{0B77A8CC-DC09-43D3-8F27-ABBC72FB0D62}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestPlugin", "TestPlugin\TestPlugin.vcxproj", "{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -161,6 +163,18 @@ Global
 		{0B77A8CC-DC09-43D3-8F27-ABBC72FB0D62}.Release|Win32.Build.0 = Release|Win32
 		{0B77A8CC-DC09-43D3-8F27-ABBC72FB0D62}.Release|x64.ActiveCfg = Release|x64
 		{0B77A8CC-DC09-43D3-8F27-ABBC72FB0D62}.Release|x64.Build.0 = Release|x64
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Debug|Win32.Build.0 = Debug|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Debug|x64.ActiveCfg = Debug|x64
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Debug|x64.Build.0 = Debug|x64
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Release|Win32.ActiveCfg = Release|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Release|Win32.Build.0 = Release|Win32
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Release|x64.ActiveCfg = Release|x64
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -175,5 +189,6 @@ Global
 		{1F7BC963-E93D-47C0-A1CA-F6B0B27FDA73} = {D3559288-6FA0-470F-9685-C77C161C1BB9}
 		{8ABEE490-4C9E-4C7F-8306-352A17C1AE04} = {164C26D5-2E90-4D5A-B001-807392C9270F}
 		{0B77A8CC-DC09-43D3-8F27-ABBC72FB0D62} = {207AA35B-5F85-4F77-A806-2D6E9DF4C128}
+		{7C7AC701-1EF3-47B8-A77D-F6E673C1ECCC} = {207AA35B-5F85-4F77-A806-2D6E9DF4C128}
 	EndGlobalSection
 EndGlobal

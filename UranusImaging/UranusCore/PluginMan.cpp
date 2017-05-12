@@ -20,6 +20,7 @@
 #include "..\Utility\FindFile.h"
 #include "..\Utility\ErrorDef.h"
 #include "..\Utility\StringDef.h"
+#include "..\PluginUtil\PluginBase.h"
 
 
 //==================================================================================
@@ -144,8 +145,10 @@ int CPluginMan::SetOption(PluginOpt PlgOpt)
 bool CPluginMan::CheckCompatible(HINSTANCE hPlgInst)
 {
 	bool bResult = false;
-
-	
+		
+	//ObjProc objFunc = (ObjProc)GetProcAddress(mod, "_Z6getObjv");
+	//NameProc nameFunc = (NameProc)GetProcAddress(mod, "_Z7getNamev");
+	//if (!objFunc || !nameFunc)
 
 	return bResult;
 }

@@ -10,7 +10,7 @@ public:
 
 protected:
 	tstring m_tPlgnVersion; //	version
-	tstring m_tPlgnCode;	//	compatible code
+	//tstring m_tPlgnCode;	//	compatible code
 
 public:
 	//get version of this plugin
@@ -18,9 +18,9 @@ public:
 		return m_tPlgnVersion; 
 	};
 
-	//get compatible code
-	virtual tstring GetPlgnCode() {
-		return m_tPlgnCode;
-	};
+	////get compatible code
+	//virtual tstring GetPlgnCode() {
+	//	return m_tPlgnCode;
+	//};
 };
 

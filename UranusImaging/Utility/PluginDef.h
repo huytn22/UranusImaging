@@ -2,5 +2,5 @@
 
 typedef struct PluginOpt {
 	tstring		tVersion;
-	tstring		tCompatibleCode;
+	tstring		tValidateCode;
 };
