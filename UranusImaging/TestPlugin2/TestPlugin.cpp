@@ -5,8 +5,30 @@
 #include "..\Utility\DllDef.h"
 #include "..\PluginUtil\PluginItf.h"
 #include "..\Utility\ConstDef.h"
+#include "DumPlugin.h"
 
+//==================================================================================
+// Description:
+//	Version of plugin dll.
+//
+// Note:
+//	
+//==================================================================================
 #define VERSION _T("0.1.0.0")
+
+//==================================================================================
+// Description:
+//	Object list of this plugin. When URA_GET_OBJ_INST function is called, 
+//	this list will be used to create object instance.
+//
+// Note:
+//	
+//==================================================================================
+void* g_arrObj[] =
+{
+	(void*)(new CDumPlugin())
+};
+
 
 //==================================================================================
 // Description:
@@ -22,10 +44,10 @@
 //	
 //==================================================================================
 PLUGIN_API
-tstring URA_GET_VERSION()
+TCHAR* URA_GET_VERSION()
 {
-	tstring version = VERSION;
-	return version;
+	//tstring version = VERSION;
+	return VERSION;
 }
 
 //==================================================================================
@@ -42,7 +64,7 @@ tstring URA_GET_VERSION()
 //	
 //==================================================================================
 PLUGIN_API
-tstring URA_GET_VALID_CODE()
+TCHAR* URA_GET_VALID_CODE()
 {
 	return VALIDATE_CODE;
 }

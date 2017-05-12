@@ -4,10 +4,10 @@
 
 
 // Get version of plugin
-typedef tstring (__cdecl *GetVersionsPtr)(void);
+typedef TCHAR* (__cdecl *GetVersionsPtr)(void);
 
 // Get compatible code of plugin
-typedef tstring (__cdecl *GetValidateCodePtr)(void);
+typedef TCHAR* (__cdecl *GetValidateCodePtr)(void);
 
 // Get objects instance
 typedef void* (__cdecl *GetObjInstPtr)(void);
@@ -31,5 +31,4 @@ typedef void* (__cdecl *GetObjInstPtr)(void);
 #define URA_GET_OBJ_INST uraGetObjInst
 //name of function that get object instance.
 #define URA_FC_GET_OBJ_NAME URA_GET_NAME(URA_GET_OBJ_INST)
-
 ////
