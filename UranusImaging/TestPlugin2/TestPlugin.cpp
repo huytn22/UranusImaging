@@ -6,6 +6,7 @@
 #include "..\PluginUtil\PluginItf.h"
 #include "..\Utility\ConstDef.h"
 #include "DumPlugin.h"
+#include "DumPlugin2.h"
 
 //==================================================================================
 // Description:
@@ -24,10 +25,13 @@
 // Note:
 //	
 //==================================================================================
-void* g_arrObj[] =
-{
-	(void*)(new CDumPlugin())
-};
+//void* g_arrObj[] =
+//{
+//	(void*)(new CDumPlugin())
+//};
+#define OBJ_LSIT \
+		CDumPlugin,\
+		CDumPlugin2
 
 
 //==================================================================================
@@ -86,6 +90,7 @@ TCHAR* URA_GET_VALID_CODE()
 PLUGIN_API
 void* URA_GET_OBJ_INST()
 {
+
 
 	return NULL;
 }
