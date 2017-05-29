@@ -45,7 +45,7 @@ PLG_FACTORY_REGISTER(CDumPlugin2)
 //	
 //==================================================================================
 PLUGIN_API
-TCHAR* URA_GET_VERSION()
+tstring URA_GET_VERSION()
 {
 	//tstring version = VERSION;
 	return VERSION;
@@ -65,7 +65,7 @@ TCHAR* URA_GET_VERSION()
 //	
 //==================================================================================
 PLUGIN_API
-TCHAR* URA_GET_VALID_CODE()
+tstring URA_GET_VALID_CODE()
 {
 	return VALIDATE_CODE;
 }
@@ -90,6 +90,8 @@ void* URA_GET_OBJ_INST()
 	CPlgFactoryBase Factory;
 
 	MAPTYPE* maptype = Factory.GetMap();
+
+	MAP_PLUGIN mapPlugin;
 
 	for (MAPTYPE::iterator it = maptype->begin(); it != maptype->end(); it++)
 	{

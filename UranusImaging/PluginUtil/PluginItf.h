@@ -4,10 +4,10 @@
 
 
 // Get version of plugin
-typedef TCHAR* (__cdecl *GetVersionsPtr)(void);
+typedef tstring (__cdecl *GetVersionsPtr)(void);
 
 // Get compatible code of plugin
-typedef TCHAR* (__cdecl *GetValidateCodePtr)(void);
+typedef tstring (__cdecl *GetValidateCodePtr)(void);
 
 // Get objects instance
 typedef void* (__cdecl *GetObjInstPtr)(void);
