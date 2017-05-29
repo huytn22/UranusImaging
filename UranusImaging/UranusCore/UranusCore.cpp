@@ -6,7 +6,7 @@
 #if defined(_WINDOWS) || defined(WIN32)
 #include <Windows.h>
 #endif // _WINDOWS
-#include "../Utility/ConstDef.h"
+#include "../Utility/com_include.h"
 #include "PluginMan.h"
 
 #define VERSION _T("0.1.0.0")

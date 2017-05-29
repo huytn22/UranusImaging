@@ -8,3 +8,5 @@
 using namespace std;
 
 typedef basic_string<TCHAR>   tstring;
+
+//typedef int error_t;

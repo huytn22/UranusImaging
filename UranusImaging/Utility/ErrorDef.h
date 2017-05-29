@@ -1,6 +1,6 @@
 #pragma once
 
-enum {
+enum error_t{
 	//error: 0
 	//No error.
 	uraERR_SUCCESS = 0,
@@ -12,6 +12,9 @@ enum {
 	//error: 2
 	//File was not found.
 	uraERR_FILE_NOT_FOUND,
+
+	//error: 3
+	uraERR_PLG_NO_FEATURE,
 	
 	uraERR_MAX
 };

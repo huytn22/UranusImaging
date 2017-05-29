@@ -17,9 +17,7 @@
 #endif // _WINDOWS
 
 #include "PluginMan.h"
-#include "..\Utility\FindFile.h"
-#include "..\Utility\ErrorDef.h"
-#include "..\Utility\StringDef.h"
+#include "..\Utility\com_include.h"
 #include "..\PluginUtil\PluginBase.h"
 #include "..\PluginUtil\PluginItf.h"
 
@@ -76,7 +74,7 @@ CPluginMan::~CPluginMan()
 //	None.
 //	
 //==================================================================================
-int CPluginMan::LoadPlugin(tstring szPluginDir)
+error_t CPluginMan::LoadPlugin(tstring szPluginDir)
 {
 	return LoadPlugin(szPluginDir, m_PlgOption);
 }
@@ -95,9 +93,10 @@ int CPluginMan::LoadPlugin(tstring szPluginDir)
 // Note:
 //
 //==================================================================================
-int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
+error_t CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 {
 	CFindFile findPlgin;
+	error_t ErrRet;
 
 	//open plugin directory
 	if (!findPlgin.OpenDir(szPluginDir, PLUGIN_EXT))
@@ -128,6 +127,16 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 			continue;
 		}
 
+		//load all feature in this plugin
+		ErrRet = LoadPlgData(hPlgInst);
+		if (ErrRet != uraERR_SUCCESS)
+		{
+			FreeLibrary(hPlgInst);
+			continue;
+		}
+
+		//store instance of valid plugin
+		m_vPlgInst.push_back(hPlgInst);
 
 	} while (findPlgin.GetNextFile(tFileName));
 	
@@ -147,9 +156,36 @@ int CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 // Note:
 //	
 //==================================================================================
-int CPluginMan::SetOption(PluginOpt PlgOpt)
+error_t CPluginMan::SetOption(PluginOpt PlgOpt)
 {
 	m_PlgOption = PlgOpt;
+
+	return uraERR_SUCCESS;
+}
+
+//==================================================================================
+// Description:
+//	Load all feature in plugin.
+//
+// Parameters:
+//	[IN] HINSTANCE hPlgInst	: Instance of plugin.
+//
+// Return:
+//	error type.
+//	
+//
+// Note:
+//	
+//==================================================================================
+error_t CPluginMan::LoadPlgData(HINSTANCE hPlgInst)
+{
+	GetObjInstPtr GetObjFunc = (GetObjInstPtr)GetProcAddress(hPlgInst, URA_FC_GET_OBJ_NAME);
+	if (!GetObjFunc)
+	{
+		return uraERR_PLG_NO_FEATURE;
+	}
+
+	GetObjFunc();
 
 	return uraERR_SUCCESS;
 }
@@ -208,4 +244,41 @@ bool CPluginMan::VerifyPlugin(HINSTANCE hPlgInst)
 bool CPluginMan::VerifyVersion(tstring tVersion)
 {
 	return true;
+}
+
+//==================================================================================
+// Description:
+//	Clean all data of plugin manager.
+//
+// Parameters:
+//
+// Return:
+//	None.
+//
+// Note:
+//	
+//==================================================================================
+void CPluginMan::Clean()
+{
+	CleanPlgInst();
+}
+
+//==================================================================================
+// Description:
+//	Clean all instance of loaded plugin.
+//
+// Parameters:
+//
+// Return:
+//	None.
+//
+// Note:
+//	
+//==================================================================================
+void CPluginMan::CleanPlgInst()
+{
+	for (PLG_INST::iterator it = m_vPlgInst.begin(); it != m_vPlgInst.end(); it++)
+	{
+		FreeLibrary(*it);
+	}
 }

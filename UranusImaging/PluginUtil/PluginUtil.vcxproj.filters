@@ -33,12 +33,21 @@
     <ClInclude Include="PluginItf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PlgTypeDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlgFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PluginBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlgFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

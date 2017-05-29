@@ -7,6 +7,8 @@
 #include "..\Utility\ConstDef.h"
 #include "DumPlugin.h"
 #include "DumPlugin2.h"
+#include "..\PluginUtil\PlgFactory.h"
+#include "..\PluginUtil\PlgTypeDef.h"
 
 //==================================================================================
 // Description:
@@ -25,13 +27,8 @@
 // Note:
 //	
 //==================================================================================
-//void* g_arrObj[] =
-//{
-//	(void*)(new CDumPlugin())
-//};
-#define OBJ_LSIT \
-		CDumPlugin,\
-		CDumPlugin2
+PLG_FACTORY_REGISTER(CDumPlugin)
+PLG_FACTORY_REGISTER(CDumPlugin2)
 
 
 //==================================================================================
@@ -90,7 +87,14 @@ TCHAR* URA_GET_VALID_CODE()
 PLUGIN_API
 void* URA_GET_OBJ_INST()
 {
+	CPlgFactoryBase Factory;
 
+	MAPTYPE* maptype = Factory.GetMap();
+
+	for (MAPTYPE::iterator it = maptype->begin(); it != maptype->end(); it++)
+	{
+
+	}
 
 	return NULL;
 }

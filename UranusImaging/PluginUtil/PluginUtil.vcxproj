@@ -134,6 +134,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PlgFactory.h" />
+    <ClInclude Include="PlgTypeDef.h" />
     <ClInclude Include="PluginBase.h" />
     <ClInclude Include="PluginItf.h" />
     <ClInclude Include="PluginMacro.h" />
@@ -141,6 +143,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PlgFactory.cpp" />
     <ClCompile Include="PluginBase.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

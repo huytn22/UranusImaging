@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ComTypeDef.h" />
+    <ClInclude Include="com_include.h" />
     <ClInclude Include="ConstDef.h" />
     <ClInclude Include="DllDef.h" />
     <ClInclude Include="ErrorDef.h" />
