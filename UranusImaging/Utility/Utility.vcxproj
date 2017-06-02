@@ -158,9 +158,11 @@
     <ClInclude Include="FindFile.h" />
     <ClInclude Include="PluginDef.h" />
     <ClInclude Include="StringDef.h" />
+    <ClInclude Include="UtilityFunc.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FindFile.cpp" />
+    <ClCompile Include="UtilityFunc.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -70,10 +70,13 @@ tstring URA_GET_VALID_CODE()
 	return VALIDATE_CODE;
 }
 
+#define SET_THIS_FILE_NAME() \
+    char* const THIS_FILE_NAME = \
+        
 
 //==================================================================================
 // Description:
-//	Get validation code of plugin dll.
+//	Get object of plugin dll.
 //
 // Parameters:
 //	None.
@@ -92,6 +95,9 @@ void* URA_GET_OBJ_INST()
 	MAPTYPE* maptype = Factory.GetMap();
 
 	MAP_PLUGIN mapPlugin;
+
+	tstring FileName = _T(__FILE__);
+
 
 	for (MAPTYPE::iterator it = maptype->begin(); it != maptype->end(); it++)
 	{

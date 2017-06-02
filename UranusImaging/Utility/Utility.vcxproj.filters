@@ -39,9 +39,15 @@
     <ClInclude Include="com_include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UtilityFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FindFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilityFunc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

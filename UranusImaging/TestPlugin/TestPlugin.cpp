@@ -87,6 +87,10 @@ void* URA_GET_OBJ_INST()
 
 	MAPTYPE* maptype = Factory.GetMap();
 
+	tstring PlgName = _T(PROJECT_NAME);
+
+
+
 	for (MAPTYPE::iterator it = maptype->begin(); it != maptype->end(); it++)
 	{
 
