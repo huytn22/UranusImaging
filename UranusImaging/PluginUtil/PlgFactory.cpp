@@ -15,6 +15,8 @@ MAPTYPE* CPlgFactoryBase::m_mapType = NULL;
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 CPlgFactoryBase::CPlgFactoryBase()
 {
@@ -32,6 +34,8 @@ CPlgFactoryBase::CPlgFactoryBase()
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 CPlgFactoryBase::~CPlgFactoryBase()
 {
@@ -49,6 +53,8 @@ CPlgFactoryBase::~CPlgFactoryBase()
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 CPluginBase* CPlgFactoryBase::CreateInstance(tstring clsType)
 {
@@ -71,6 +77,8 @@ CPluginBase* CPlgFactoryBase::CreateInstance(tstring clsType)
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 MAPTYPE* CPlgFactoryBase::GetMap()
 {

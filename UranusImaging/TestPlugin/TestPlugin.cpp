@@ -1,5 +1,12 @@
-// TestPlugin.cpp : Defines the exported functions for the DLL application.
+//==================================================================================
+// Description:
+//	TestPlugin.cpp : Defines the exported functions for the DLL application.
 //
+// Note:
+//
+// History:
+//	2017/06/06		HuyTN	Initialize code.
+//==================================================================================
 
 #include "stdafx.h"
 #include "..\Utility\DllDef.h"
@@ -15,6 +22,8 @@
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 #define VERSION _T("0.1.0.0")
 
@@ -25,6 +34,8 @@
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 PLG_FACTORY_REGISTER(CDumPlugin)
 
@@ -40,6 +51,8 @@ PLG_FACTORY_REGISTER(CDumPlugin)
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 PLUGIN_API
 tstring URA_GET_VERSION()
@@ -60,6 +73,8 @@ tstring URA_GET_VERSION()
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 PLUGIN_API
 tstring URA_GET_VALID_CODE()
@@ -79,6 +94,8 @@ tstring URA_GET_VALID_CODE()
 //
 // Note:
 //	
+// History:
+//	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
 PLUGIN_API
 void* URA_GET_OBJ_INST()
