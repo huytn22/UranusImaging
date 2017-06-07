@@ -7,7 +7,7 @@
 //
 //
 // History:
-// 08/05/2017	Huy		Original created.
+// 08/05/2017	HuyTN		Initialize code.
 //==================================================================================
 
 #include "stdafx.h"
@@ -35,6 +35,8 @@
 // Note:
 //	None.
 //
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 CPluginMan::CPluginMan()
 {
@@ -54,6 +56,8 @@ CPluginMan::CPluginMan()
 // Note:
 //	None.
 //
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 CPluginMan::~CPluginMan()
 {
@@ -73,6 +77,8 @@ CPluginMan::~CPluginMan()
 // Note:
 //	None.
 //	
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 error_t CPluginMan::LoadPlugin(tstring szPluginDir)
 {
@@ -92,6 +98,8 @@ error_t CPluginMan::LoadPlugin(tstring szPluginDir)
 //
 // Note:
 //
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 error_t CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 {
@@ -155,6 +163,8 @@ error_t CPluginMan::LoadPlugin(tstring szPluginDir, PluginOpt PlgOpt)
 //	
 // Note:
 //	
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 error_t CPluginMan::SetOption(PluginOpt PlgOpt)
 {
@@ -176,6 +186,8 @@ error_t CPluginMan::SetOption(PluginOpt PlgOpt)
 //
 // Note:
 //	
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 error_t CPluginMan::LoadPlgData(HINSTANCE hPlgInst)
 {
@@ -192,7 +204,7 @@ error_t CPluginMan::LoadPlgData(HINSTANCE hPlgInst)
 
 //==================================================================================
 // Description:
-//	Check this plugin is compatible or not.
+//	Check this plugin is compatible with current software or not.
 //
 // Parameters:
 //	[IN] HINSTANCE hPlgInst	: Instance of plugin.
@@ -203,6 +215,8 @@ error_t CPluginMan::LoadPlgData(HINSTANCE hPlgInst)
 //
 // Note:
 //	
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 bool CPluginMan::VerifyPlugin(HINSTANCE hPlgInst)
 {
@@ -211,7 +225,9 @@ bool CPluginMan::VerifyPlugin(HINSTANCE hPlgInst)
 	if (!GetValidateCodeFC)
 		return false;
 
-	// verify if this dll is not a plugin of this software
+	// verify if this dll is not a plugin of this software or not.
+	// Each plugin and software has their own validating code, if validating code of plugin and software is matched,
+	// then this plugin is compatible.
 	if (GetValidateCodeFC() != VALIDATE_CODE)
 		return false;
 
@@ -240,6 +256,8 @@ bool CPluginMan::VerifyPlugin(HINSTANCE hPlgInst)
 //
 // Note:
 //	
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 bool CPluginMan::VerifyVersion(tstring tVersion)
 {
@@ -257,6 +275,8 @@ bool CPluginMan::VerifyVersion(tstring tVersion)
 //
 // Note:
 //	
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 void CPluginMan::Clean()
 {
@@ -274,6 +294,8 @@ void CPluginMan::Clean()
 //
 // Note:
 //	
+// History:
+//	08/05/2017		HuyTN		Initialize code.
 //==================================================================================
 void CPluginMan::CleanPlgInst()
 {
