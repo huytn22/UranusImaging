@@ -33,9 +33,6 @@
     <ClInclude Include="StringDef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PluginDef.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="com_include.h">
       <Filter>Header Files</Filter>
     </ClInclude>

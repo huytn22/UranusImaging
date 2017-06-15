@@ -18,10 +18,6 @@
 
 #include "PluginMan.h"
 #include "..\Utility\com_include.h"
-#include "..\PluginUtil\PluginBase.h"
-#include "..\PluginUtil\PluginItf.h"
-#include <map>
-#include "..\PluginUtil\PlgTypeDef.h"
 
 
 //==================================================================================
@@ -199,9 +195,11 @@ error_t CPluginMan::LoadPlgData(HINSTANCE hPlgInst)
 		return uraERR_PLG_NO_FEATURE;
 	}
 
+	//get list of feature in this plugin
 	MAPTYPE* pmaptype =  (MAPTYPE*)GetObjFunc();
 
-	pmaptype->find(_T("abc"));
+	//copy all feature type of current plugin for creation in runtime.
+	m_mapPlgPool.insert(pmaptype->begin(), pmaptype->end());
 
 	return uraERR_SUCCESS;
 }

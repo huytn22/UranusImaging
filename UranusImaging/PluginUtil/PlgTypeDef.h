@@ -2,6 +2,18 @@
 
 //==================================================================================
 // Description:
+//	Option of plugin. Use for verify this plugin.
+//
+// Note:
+//	
+//==================================================================================
+typedef struct PluginOpt {
+	tstring		tVersion;
+	tstring		tValidateCode;
+};
+
+//==================================================================================
+// Description:
 //	Map Type and create function of class.
 //
 // Note:

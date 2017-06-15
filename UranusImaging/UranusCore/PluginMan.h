@@ -2,7 +2,8 @@
 
 #include <vector>
 #include "..\Utility\com_include.h"
-#include "..\Utility\PluginDef.h"
+#include "..\PluginUtil\uraPlugin.h"
+
 
 using namespace std;
 typedef vector<HINSTANCE> PLG_INST;
@@ -14,8 +15,9 @@ public:
 	~CPluginMan();
 
 private:
-	PluginOpt m_PlgOption;
-	PLG_INST m_vPlgInst;
+	PluginOpt	m_PlgOption;
+	PLG_INST	m_vPlgInst;
+	MAPTYPE		m_mapPlgPool;
 
 //private method
 private:

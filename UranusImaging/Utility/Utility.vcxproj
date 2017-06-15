@@ -156,7 +156,6 @@
     <ClInclude Include="DllDef.h" />
     <ClInclude Include="ErrorDef.h" />
     <ClInclude Include="FindFile.h" />
-    <ClInclude Include="PluginDef.h" />
     <ClInclude Include="StringDef.h" />
     <ClInclude Include="UtilityFunc.h" />
   </ItemGroup>
