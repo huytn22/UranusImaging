@@ -9,12 +9,18 @@
 //==================================================================================
 
 #include "stdafx.h"
+#include <map>
 #include "..\Utility\DllDef.h"
 #include "..\PluginUtil\PluginItf.h"
 #include "..\Utility\ConstDef.h"
-#include "DumPlugin.h"
 #include "..\PluginUtil\PlgFactory.h"
+#include "..\PluginUtil\PluginBase.h"
 #include "..\PluginUtil\PlgTypeDef.h"
+#include "..\PluginUtil\PluginMacro.h"
+#include "DumPlugin.h"
+#include "DumPlugin3.h"
+
+using namespace std;
 
 //==================================================================================
 // Description:
@@ -25,7 +31,7 @@
 // History:
 //	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
-#define VERSION _T("0.1.0.0")
+#define PLG_VERSION _T("0.1.0.0")
 
 //==================================================================================
 // Description:
@@ -37,7 +43,8 @@
 // History:
 //	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
-PLG_FACTORY_REGISTER(CDumPlugin)
+PLG_FACTORY_REGISTER(PROJECT_NAME, CDumPlugin)
+PLG_FACTORY_REGISTER(PROJECT_NAME, CDumPlugin3)
 
 //==================================================================================
 // Description:
@@ -57,8 +64,7 @@ PLG_FACTORY_REGISTER(CDumPlugin)
 PLUGIN_API
 tstring URA_GET_VERSION()
 {
-	tstring version = VERSION;
-	return version;
+	return PLG_VERSION;
 }
 
 //==================================================================================
@@ -104,14 +110,5 @@ void* URA_GET_OBJ_INST()
 
 	MAPTYPE* maptype = Factory.GetMap();
 
-	tstring PlgName = _T(PROJECT_NAME);
-
-
-
-	for (MAPTYPE::iterator it = maptype->begin(); it != maptype->end(); it++)
-	{
-
-	}
-
-	return NULL;
+	return (void*)maptype;
 }

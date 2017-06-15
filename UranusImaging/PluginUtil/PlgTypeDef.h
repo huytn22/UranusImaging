@@ -16,7 +16,7 @@ typedef std::map<tstring, CPluginBase*(*)()> MAPTYPE;
 // Note:
 //	
 //==================================================================================
-typedef std::map<tstring, CPluginBase*> MAP_PLUGIN;
+typedef std::map<PluginID, CPluginBase*> MAP_PLUGIN;
 
 //==================================================================================
 // Description:

@@ -1,6 +1,8 @@
 #pragma once
 #include "..\Utility\ComTypeDef.h"
-
+#include <map>
+#include "..\PluginUtil\PluginBase.h"
+#include "..\PluginUtil\PlgTypeDef.h"
 
 
 // Get version of plugin

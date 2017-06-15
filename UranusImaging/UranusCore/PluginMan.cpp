@@ -20,6 +20,8 @@
 #include "..\Utility\com_include.h"
 #include "..\PluginUtil\PluginBase.h"
 #include "..\PluginUtil\PluginItf.h"
+#include <map>
+#include "..\PluginUtil\PlgTypeDef.h"
 
 
 //==================================================================================
@@ -197,7 +199,9 @@ error_t CPluginMan::LoadPlgData(HINSTANCE hPlgInst)
 		return uraERR_PLG_NO_FEATURE;
 	}
 
-	GetObjFunc();
+	MAPTYPE* pmaptype =  (MAPTYPE*)GetObjFunc();
+
+	pmaptype->find(_T("abc"));
 
 	return uraERR_SUCCESS;
 }

@@ -9,9 +9,10 @@ using namespace std;
 
 typedef basic_string<TCHAR>   tstring;
 
-typedef struct PluginID {
-	tstring PluginName;
-	tstring ClassName;
-};
+//typedef struct PluginID {
+//	tstring PluginName;
+//	tstring ClassName;
+//};
+typedef tstring PluginID;
 
 //typedef int error_t;

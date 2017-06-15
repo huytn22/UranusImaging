@@ -76,5 +76,6 @@ public:
 // History:
 //	2017/06/06		HuyTN	Initialize code.
 //==================================================================================
-#define PLG_FACTORY_REGISTER(CLS_TYPE) \
-	FactoryRegister<CLS_TYPE> OBJTYPE_##CLS_TYPE(_T(#CLS_TYPE));
+#define PLG_FACTORY_REGISTER(PLG_NAME, CLS_TYPE) \
+	FactoryRegister<CLS_TYPE> OBJTYPE_##CLS_TYPE(##PLG_NAME"@"#CLS_TYPE);
+

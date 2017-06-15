@@ -20,7 +20,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	PlgOption.tVersion = VERSION;
 	PlgOption.tValidateCode = VALIDATE_CODE;
 
-	PlgMan.LoadPlugin(_T("C:\\huy\\WorkingDir\\Uranus\\git_src\\UranusImaging\\UranusImaging\\x64\\Debug"), PlgOption);
+	PlgMan.LoadPlugin(_T("..\\x64\\Debug"), PlgOption);
 
 
 	return 0;
