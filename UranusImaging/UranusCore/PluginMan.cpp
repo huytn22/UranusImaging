@@ -197,6 +197,8 @@ error_t CPluginMan::LoadPlgData(HINSTANCE hPlgInst)
 
 	//get list of feature in this plugin
 	MAPTYPE* pmaptype =  (MAPTYPE*)GetObjFunc();
+	if (pmaptype == NULL || pmaptype->size() == 0)
+		return uraERR_PLG_NO_FEATURE;
 
 	//copy all feature type of current plugin for creation in runtime.
 	m_mapPlgPool.insert(pmaptype->begin(), pmaptype->end());
